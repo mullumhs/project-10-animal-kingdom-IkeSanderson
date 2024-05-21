@@ -12,25 +12,61 @@
 # This class should have an initialiser with at least three attributes. E.g. name, age, and habitat.
 # Add at least two methods for common animal behaviors. E.g. eat and sleep.
 
+class Animal:
 
+    def __init__(self, name, species, age, habitat, diet):
+        self.name = name
+        self.species = species
+        self.age = age
+        self.habitat = habitat 
+        self.diet = diet
+    
+    def eat(self):
+        return f"{self.name} the {self.species} is munchin"
+    def sleep(self):
+        return f"{self.name} the {self.species} be sleepin"
+    
 
 
 
 # Create at least two derived classes from the Animal class. E.g. Bird and Fish.
 # Give each of the derived classes at least one specific behavior. E.g. fly and swim.
+class Mammal(Animal):
+    
+    def __init__(self, name, species, age, habitat, diet, hairs):
+        super().__init__(name, species, age, habitat, diet)
+        self.hairs = hairs
+    
+    def grow_hair(self):
+        return f"{self.name} the {self.species}'s hair do be growin"
+    
+    def __str__(self):
+        return f"{self.name} is a {self.species} that is {self.age} years old, live in a {self.habitat} is a {self.diet} and has {self.hairs} hairs"
+class Fish(Animal):
+    def __init__(self, name, species, age, habitat, diet, legs):
+        super().__init__(name, species, age, habitat, diet)
+        self.legs = legs
+    
+    def walk(self):
+        return f"{self.name} the {self.species} is trying their best however is a fish"
+   
+    def __str__(self):
+        return f"{self.name} is a {self.species} that is {self.age} years old, live in a {self.habitat} is a {self.diet} and has {self.legs} legs"
 
 
 
 
 
 # Create at least two instances of the Animal derived classes with different data.
-
+Kyle = Fish("Kyle", "Mullet", 10, "Water","Omnivor", 3)
+Cyle = Mammal("Kyle", "Elephant", 100, "Plains","Herbivor", 30000)
 
 
 
 
 # Write code that prints out the details of each animal and calls their specific behaviors.
-
-
+print(Kyle)
+print(Cyle)
+print(Kyle.walk())
 
 
